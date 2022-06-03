@@ -1,0 +1,136 @@
+:root {
+    --black: #080808;
+    --brown: #640303;
+    --board: #fafaf8;
+    --dark-purple: #5e3577;
+    --light-blue: #d2eaf5;
+    --purple: #b02f7c;
+    --orange: #fa811d;
+    --red: #f50c2b;
+    --yellow: #ffed20;
+    --green: #41994e;
+    --dark-blue: #5a6dba;
+}
+
+.brown {
+    background-color: var(--brown);
+}
+
+.red {
+    background-color: var(--red);
+}
+
+.gray {
+    background-color: var(--light-blue);
+}
+
+.orange {
+    background-color: var(--orange);
+}
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+.purple {
+    background-color: var(--purple);
+}
+
+.blue {
+    background-color: var(--dark-blue);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+
+
+/* .cell {
+    width: 70px;
+    height: 140px;
+    background-color: #95bda4;
+    box-sizing: border-box;
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+}
+
+.cell img {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.corner {
+    width: 140px;
+}
+
+.rightCell {
+    transform: rotate(90deg);
+    transform-origin: center;
+}
+
+.leftCell {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.topCell,
+.botCell {
+    border-right: none;
+}
+
+.topCell {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.botCell {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftCell,
+.rightCell {
+    width: 140px;
+    height: 70px;
+    border-bottom: none;
+}
+
+.coloredCell {
+    height: 25px;
+    width: 70px;
+}
+
+.leftCell > .coloredCell,
+.rightCell > .coloredCell{
+    height: 70px;
+    width: 25px;
+}
+
+.leftCell {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.rightCell {
+    display: flex;
+    flex-direction: row;
+}
+
+.cellName {
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+}
+
+.bodyCell {
+    display: flex;
+    margin: auto;
+}
+
+.propertiesCell {
+
+} */
+

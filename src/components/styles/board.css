@@ -1,0 +1,243 @@
+/* .board {
+    margin: auto;
+}
+
+.topBoardContainer,
+.botBoardContainer {
+    display: flex;
+}
+
+.botBoardContainer {
+    flex-direction: row-reverse;
+}
+
+.leftBoardContainer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.innerBoard {
+    display: flex;
+}
+
+.centerBoardContainer {
+    background-color: #95bda4;
+    width: 630px;
+}
+
+
+.innerBoard > div {
+
+} */
+
+.table {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: 125px repeat(9, 80px) 125px;
+  grid-template-rows: 125px repeat(9, 80px) 125px;
+  grid-gap: 2px;
+  margin: 50px auto;
+  width: 994px;
+  height: 994px;
+  background: #080808;
+  border: 2px solid #080808;
+}
+
+.center {
+  grid-column: 2/11;
+  grid-row: 2/11;
+  background: #fafaf8;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.title {
+  grid-column: 1/9;
+  grid-row: 4;
+  font-size: 90px;
+  font-weight: 400;
+  letter-spacing: 12px;
+}
+
+.community-chest-deck {
+  grid-column: 2/4;
+  grid-row: 2/4;
+  transform: rotate(135deg);
+  margin-bottom: 60px;
+  margin-right: 60px;
+}
+
+.chance-deck {
+  grid-column: 5/7;
+  grid-row: 5/7;
+  transform: rotate(315deg);
+  margin-top: 60px;
+  margin-left: 60px;
+}
+
+.label {
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+}
+
+.deck {
+  border: 2px dashed #080808;
+  width: 160px;
+  height: 120px;
+}
+
+.row {
+  display: grid;
+  grid-gap: 2px;
+}
+
+.horizontal-row {
+  grid-template-columns: repeat(11, 80px);
+  grid-template-rows: 125px;
+}
+
+.vertical-row {
+  grid-template-columns: 125px;
+  grid-template-rows: repeat(11, 80px);
+}
+.vertical-row .container {
+  top: 50%;
+  left: 50%;
+}
+
+.bottom-row {
+  grid-column: 2/11;
+  grid-row: 11;
+}
+
+.left-row {
+  grid-column: 1;
+  grid-row: 2/11;
+}
+.left-row .container {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.top-row {
+  grid-column: 2/11;
+  grid-row: 1;
+}
+.top-row .container {
+  transform: rotate(180deg);
+}
+
+.right-row {
+  grid-column: 11;
+  grid-row: 2/11;
+}
+.right-row .container {
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.cell {
+  background: #fafaf8;
+  text-align: center;
+}
+.cell .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transform-origin: center;
+  height: 125px;
+  width: 80px;
+}
+.cell .name,
+.cell .instructions {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cell .price {
+  font-size: 7px;
+  font-weight: 400;
+  padding-bottom: 5px;
+}
+
+.corner .container {
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+.corner .name {
+  padding: 0;
+}
+
+.property .color-bar {
+  height: 25px;
+  border-bottom: 2px solid #080808;
+}
+.property .name {
+  padding-bottom: 50px;
+}
+
+.railroad .name {
+  padding-top: 10px;
+}
+.railroad .drawing {
+  font-size: 60px;
+  color: #080808;
+}
+
+.utility .name {
+  padding-top: 10px;
+}
+.utility .drawing {
+  font-size: 70px;
+}
+
+.fee .name {
+  padding-top: 10px;
+  font-size: 14px;
+}
+.fee .instructions {
+  font-size: 10px;
+}
+
+/* corner cells */
+.go {
+    grid-column: 1;
+    grid-row: 1/2;
+    position: relative;
+}
+
+.visting {
+    grid-column: 11;
+    grid-row: 1/1;
+    position: relative;
+}
+
+.parking {
+    grid-column: 1;
+    grid-row: 1/2;
+    position: relative;
+}
+
+.jail {
+    grid-column: 1;
+    grid-row: 11/12;
+    position: relative;
+}
+
+.parking {
+    grid-column: 11;
+    grid-row: 11/12;
+    position: relative;
+}
+
+/* .corner {
+    width:140px
+} */
