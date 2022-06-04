@@ -1,12 +1,12 @@
-import { Board } from "../models/Board"
 
+import GameInfoComponent from './GameInfoComponent';
 import CellComponent from './CellComponent'
 import DiceComponent from "./DiceComponent";
 
 import './styles/board.css'
 
 
-const BoardComponent = ({ board, setBoard, setDice, dice}) => {
+const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => {
 
   // const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
@@ -32,37 +32,6 @@ const BoardComponent = ({ board, setBoard, setDice, dice}) => {
 
 
   return (
-    // <div className="board">
-    //   <div className='topBoardContainer'>
-    //     {board.topCells.map((cell, index) =>
-    //       <CellComponent cell={cell} key={cell.id} />
-    //     )}
-    //   </div>
-
-    //   <div className='innerBoard'>
-
-    //     <div className='leftBoardContainer'>
-    //       {board.leftCells.map((cell, index) =>
-    //         <CellComponent cell={cell} key={cell.id} />
-    //       )}
-    //     </div>
-
-    //     <div className='centerBoardContainer'>
-    //       Center Container
-    //     </div>
-
-    //     <div className='rightBoardContainer'>
-    //       {board.rightCells.map((cell, index) =>
-    //         <CellComponent cell={cell} key={cell.id} />
-    //       )}
-    //     </div>
-    //   </div>
-    //   <div className='botBoardContainer'>
-    //     {board.botCells.map((cell, index) =>
-    //       <CellComponent cell={cell} key={cell.id} />
-    //     )}
-    //   </div>
-    // </div>
 
     <div className="table">
       <div className="board">
@@ -72,8 +41,13 @@ const BoardComponent = ({ board, setBoard, setDice, dice}) => {
             <h2 className="label">Community Chest</h2>
             <div className="deck">            </div>
           </div>
-          <h1 className="title">MONOPOLY</h1>
-          <DiceComponent setDice={setDice} dice={dice}/>
+
+          <div className="gameInfoContainer">
+            <GameInfoComponent finishPlayerTurn={finishPlayerTurn}/>
+
+            <DiceComponent setDice={setDice} dice={dice}/>
+          </div>
+
           <div className="chance-deck">
             <h2 className="label">Chance</h2>
             <div className="deck"></div>

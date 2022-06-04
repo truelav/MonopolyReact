@@ -8,10 +8,13 @@ import './App.css';
 function App() {
 
   const [board, setBoard] = useState(new Board())
+
   const [player1, setPlayer1] = useState(new Player('p1', 'car', 0, true, 1000, []))
   const [player2, setPlayer2] = useState(new Player('p2', 'ball', 0, false, 1000, []))
 
   const [dice, setDice] = useState([0, 0, 0])
+
+  const [playerTurn, setPlayerTurn] = useState(player1)
   // const [playerTurn, setPlayerTurn] = useState([])
 
   useEffect(() => {
@@ -38,14 +41,31 @@ function App() {
   const rollDice = () => {
     let dice1 = Math.floor(Math.random() * (6 - 1) + 1); 
     let dice2 = Math.floor(Math.random() * (6 - 1) + 1);
+
     console.log(dice1, dice2)
+
     setDice([dice1, dice2, dice1 + dice2])
+  }
+
+  const changePlayerTurn = () => {
+    playerTurn === player1 ? setPlayerTurn(player2) : setPlayerTurn(player1)
+  }
+
+  const finishPlayerTurn = () => {
+    changePlayerTurn()
   }
 
 
   return (
     <div className="App">
-      <BoardComponent board={board} setBoard={setBoard} setDice={rollDice} dice={dice}/>
+      <BoardComponent 
+        board={board} 
+        setBoard={setBoard} 
+        setDice={rollDice} 
+        dice={dice}
+        finishPlayerTurn={finishPlayerTurn}
+      
+      />
     </div>
   );
 }

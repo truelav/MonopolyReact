@@ -1,5 +1,3 @@
-import { Cell } from "../models/Cell"
-import { PropertyCell } from "../models/figures/PropertyCell";
 import PropertyCellComponent from "./PropertyCellComponent";
 
 import './styles/cell.css'

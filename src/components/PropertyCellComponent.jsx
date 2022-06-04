@@ -1,5 +1,3 @@
-import { PropertyCell } from "../models/figures/PropertyCell"
-
 import './styles/cell.css'
 
 const PropertyCellComponents = ({ cell }) => {

@@ -58,6 +58,11 @@
   align-items: center;
 }
 
+.gameInfoContainer {
+  grid-row: 4/6;
+  grid-column: 4/6;
+}
+
 .title {
   grid-column: 1/9;
   grid-row: 4;
