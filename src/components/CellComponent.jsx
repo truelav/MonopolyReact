@@ -3,11 +3,13 @@ import PropertyCellComponent from "./PropertyCellComponent";
 import './styles/cell.css'
 
 
-const CellComponent = ({ cell }) => {
+const CellComponent = ({ cell, player1, player2 }) => {
+
+
 
   if(cell.type === 'property'){
     return (
-      <PropertyCellComponent cell={cell}/>
+      <PropertyCellComponent cell={cell} player1={player1} player2={player2}/>
     )
   } else {
     return (

@@ -6,7 +6,7 @@ import DiceComponent from "./DiceComponent";
 import './styles/board.css'
 
 
-const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => {
+const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn, changePlayerTurn, player1, player2}) => {
 
   // const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
@@ -28,7 +28,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
   //   const newBoard = board.getCopyBoard()
   //   setBoard(newBoard)
   // }
-
+  console.log(player1, player2)
 
 
   return (
@@ -43,7 +43,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
           </div>
 
           <div className="gameInfoContainer">
-            <GameInfoComponent finishPlayerTurn={finishPlayerTurn}/>
+            <GameInfoComponent finishPlayerTurn={finishPlayerTurn}  changePlayerTurn/>
 
             <DiceComponent setDice={setDice} dice={dice}/>
           </div>
@@ -64,7 +64,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
 
         <div className='row horizontal-row top-row'>
           {board.topCells.map((cell, index) =>
-            <CellComponent cell={cell} key={cell.id} />
+            <CellComponent cell={cell} key={cell.id} player1={player1} player2={player2}/>
           )}
         </div>
 
@@ -78,7 +78,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
 
         <div className='row vertical-row right-row'>
           {board.rightCells.map((cell, index) =>
-            <CellComponent cell={cell} key={cell.id} />
+            <CellComponent cell={cell} key={cell.id} player1 player2/>
           )}
         </div>
 
@@ -93,7 +93,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
 
         <div className='row horizontal-row bottom-row'>
           {board.botCells.map((cell, index) =>
-            <CellComponent cell={cell} key={cell.id} />
+            <CellComponent cell={cell} key={cell.id} player1 player2/>
           )}
         </div>
 
@@ -109,7 +109,7 @@ const BoardComponent = ({ board, setBoard, setDice, dice, finishPlayerTurn}) => 
 
         <div className='row vertical-row left-row'>
           {board.leftCells.map((cell, index) =>
-            <CellComponent cell={cell} key={cell.id}/>
+            <CellComponent cell={cell} key={cell.id} player1 player2/>
           )}
         </div>
 
