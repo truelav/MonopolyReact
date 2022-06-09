@@ -9,8 +9,8 @@ function App() {
 
   const [board, setBoard] = useState(new Board())
 
-  const [player1, setPlayer1] = useState(new Player('p1', 'U+1F697', 1, true, 1000, []))
-  const [player2, setPlayer2] = useState(new Player('p2', 'U+1F3A9', 3, false, 1000, []))
+  const [player1, setPlayer1] = useState(new Player('player1', 'U+1F697', 1, true, 1000, []))
+  const [player2, setPlayer2] = useState(new Player('player2', 'U+1F3A9', 3, false, 1000, []))
 
   const [dice, setDice] = useState([0, 0, 0])
 
@@ -45,6 +45,7 @@ function App() {
     console.log(dice1, dice2)
 
     setDice([dice1, dice2, dice1 + dice2])
+    updatePlayerPosition(dice1 + dice2)
   }
 
   const changePlayerTurn = () => {
@@ -59,8 +60,15 @@ function App() {
 
   }
 
-  const updatePlayerPosition = () => {
-
+  const updatePlayerPosition = (pos) => {
+    let currentPlayer = playerTurn
+    currentPlayer.position += pos
+    
+    if(playerTurn.name === player1.name){
+      setPlayer1(currentPlayer)
+    } else {
+      setPlayer2(currentPlayer)
+    }
   }
 
   return (
@@ -71,7 +79,7 @@ function App() {
         setDice={rollDice} 
         dice={dice}
         finishPlayerTurn={finishPlayerTurn}
-        changePlayerTurn
+        playerTurn={playerTurn}
         player1={player1}
         player2={player2}
       />

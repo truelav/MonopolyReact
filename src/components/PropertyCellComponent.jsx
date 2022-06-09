@@ -4,6 +4,7 @@ const PropertyCellComponents = ({ cell, player1, player2 }) => {
 
     let p1Position
     let p2Position
+    
     if(player1.position === cell.x){
       p1Position = <div className="playerPositionContainer">X</div>
     } else {
@@ -16,7 +17,7 @@ const PropertyCellComponents = ({ cell, player1, player2 }) => {
       p2Position = <div className=""></div>
     }
 
-    console.log(player1.position, cell.x)
+    // console.log(player1.position, cell.x)
 
     return (
       <div className={['cell', cell.color, cell.x, cell.rotation, cell.type].join(' ')}>
