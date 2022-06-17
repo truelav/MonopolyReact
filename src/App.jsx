@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Board } from './models/Board';
 import { Player } from './models/Player';
 import BoardComponent from './components/BoardComponent'
+import PlayerInfoContainer from './components/PlayerInfoComponent';
 
 import './App.css';
 
@@ -35,17 +36,17 @@ function App() {
     // newBoard.addFigures()
     setBoard(newBoard)
 
-    console.log(player1, player2)
+    console.log(board)
   }
 
   const rollDice = () => {
     let dice1 = Math.floor(Math.random() * (6 - 1) + 1); 
     let dice2 = Math.floor(Math.random() * (6 - 1) + 1);
 
-    console.log(dice1, dice2)
-
     setDice([dice1, dice2, dice1 + dice2])
     updatePlayerPosition(dice1 + dice2)
+
+    console.log(board.boardObj[playerTurn.position])
   }
 
   const changePlayerTurn = () => {
@@ -62,7 +63,18 @@ function App() {
 
   const updatePlayerPosition = (pos) => {
     let currentPlayer = playerTurn
+
+    
     currentPlayer.position += pos
+    
+    //check first is we crossed the GO\
+    if(currentPlayer.position > 39){
+      currentPlayer.position  = currentPlayer.position % 39
+
+      //collect $200 from the bank
+    }
+
+  
     
     if(playerTurn.name === player1.name){
       setPlayer1(currentPlayer)
@@ -71,8 +83,21 @@ function App() {
     }
   }
 
+  const buyProperty = (player, property) => {
+    //check if available
+    //check if enough funds
+    //make transaction
+  }
+
   return (
     <div className="App">
+      <PlayerInfoContainer 
+        name={player1.name}
+        turn={player1.turn}
+        money={player1.money}
+        properties={player1.properties}
+        currentCell={board.boardObj[playerTurn.position]}
+      />
       <BoardComponent 
         board={board} 
         setBoard={setBoard} 
@@ -82,6 +107,13 @@ function App() {
         playerTurn={playerTurn}
         player1={player1}
         player2={player2}
+      />
+      <PlayerInfoContainer 
+        name={player2.name}
+        turn={player2.turn}
+        money={player2.money}
+        properties={player2.properties}
+        currentCell={board.boardObj[playerTurn.position]}
       />
     </div>
   );

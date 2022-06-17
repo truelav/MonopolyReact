@@ -2,8 +2,7 @@ import { Board } from './Board'
 
 export class Cell {
 
-
-  constructor( x, color, rotation, name, type, price) {
+  constructor( x, color, rotation, name, type, price, owner) {
     this.x = x
     this.color = color
     this.rotation = rotation;
@@ -11,6 +10,7 @@ export class Cell {
     this.name = name
     this.type = type
     this.price = price
+    this.owner = owner
   }
 
 }

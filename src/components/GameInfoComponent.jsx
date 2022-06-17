@@ -1,5 +1,5 @@
 const GameInfoComponent = ({finishPlayerTurn, playerTurn}) => {
-    console.log(playerTurn)
+    
     return (
         <div className="">
             <div className="">

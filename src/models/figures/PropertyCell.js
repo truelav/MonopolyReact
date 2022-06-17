@@ -2,7 +2,7 @@ import { Cell } from '../Cell'
 
 export class PropertyCell extends Cell {
   
-    constructor(x, color, rotation, name, price, type) {
+    constructor(x, color, rotation, name, price, type, owner) {
       super(x, color, rotation, name, type, price)
       this.x = x
       this.color = color
@@ -11,6 +11,7 @@ export class PropertyCell extends Cell {
       this.name = name
       this.price = price
       this.type = type
+      this.owner = owner | 'null'
     }
 
 }

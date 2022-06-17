@@ -30,20 +30,23 @@ export class Board {
       color: 'brown',
       price: 60,
       rent: 6,
-      type: CellType.PROPERTY
+      type: CellType.PROPERTY,
+      owner: 'null'
     },
     2: {
       name: 'community chest',
       color: 'none',
       type: CellType.COMMUNITY,
       price: 0,
+
     },
     3: {
       name: 'baltic avenue',
       color: 'brown',
       price: 60,
       rent: 6,
-      type: CellType.PROPERTY
+      type: CellType.PROPERTY,
+      owner: 'null'
     },
     4: {
       name: 'income tax',
@@ -64,7 +67,8 @@ export class Board {
       color: 'gray',
       price: 60,
       rent: 6,
-      type: CellType.PROPERTY
+      type: CellType.PROPERTY,
+      owner: 'null'
     },
     7: {
       name: 'Chance',
@@ -304,23 +308,23 @@ export class Board {
 
         if(currCell.type === 'property'){
           
-          this.topCells.push(new PropertyCell(i, currCell.color, 'topCell', currCell.name, currCell.price , currCell.type))
+          this.topCells.push(new PropertyCell(i, currCell.color, 'topCell', currCell.name, currCell.price , currCell.type, currCell.owner))
 
         } else {
 
-          this.topCells.push(new Cell(i, currCell.color, 'topCell', currCell.name, currCell.type, currCell.price | 0))
+          this.topCells.push(new Cell(i, currCell.color, 'topCell', currCell.name, currCell.type, currCell.price | 0, currCell.owner))
         
         }
 
       }
       if (i >= 11 && i <= 19) {
-        this.rightCells.push(new Cell(i, currCell.color, 'rightCell', currCell.name, currCell.type, currCell.price | 0))
+        this.rightCells.push(new Cell(i, currCell.color, 'rightCell', currCell.name, currCell.type, currCell.price | 0, currCell.owner))
       }
       if (i >= 21 && i <= 29) {
-        this.botCells.unshift(new Cell(i, currCell.color, 'botCell', currCell.name, currCell.type, currCell.price | 0))
+        this.botCells.unshift(new Cell(i, currCell.color, 'botCell', currCell.name, currCell.type, currCell.price | 0, currCell.owner))
       }
       if (i >= 31 && i <= 39) {
-        this.leftCells.unshift(new Cell(i, currCell.color, 'leftCell', currCell.name, currCell.type, currCell.price | 0))
+        this.leftCells.unshift(new Cell(i, currCell.color, 'leftCell', currCell.name, currCell.type, currCell.price | 0, currCell.owner))
       }
     }
 
