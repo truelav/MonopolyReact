@@ -9,4 +9,11 @@ export class Player {
         this.properties = properties
     }
 
+    handleBuy = (property) => {
+        if(property.owner === this.name){
+            console.log('you can buy this')
+        } else {
+            console.log('this property is already taken')
+        }
+    }
 }

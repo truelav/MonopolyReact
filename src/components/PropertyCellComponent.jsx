@@ -4,7 +4,9 @@ const PropertyCellComponents = ({ cell, player1, player2 }) => {
 
     let p1Position
     let p2Position
-    
+    let curPlayer 
+    // player1.turn ? curPlayer = player1 : curPlayer = plya
+
     if(player1.position === cell.x){
       p1Position = <div className="playerPositionContainer">X</div>
     } else {
